@@ -1,3 +1,5 @@
+<?php include_once 'includes/media/goods/goods.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,121 +23,27 @@
                 </div>
             </div>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row justify-content-between">
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
+                <?php  ?>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row justify-content-between">
+                                <?php foreach ($goods as $value): ?>
+                                    <div class="card" style="width: 15rem;" style="height: 15rem;">
+                                        <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><b><?= $value['name'];?></b></h5>
+                                            <p class="card-text">Short product description</p>
+                                            <a href="goods.php?id=<?= $value['id']?>" class="btn btn-primary">More</a>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row justify-content-between">
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row justify-content-between">
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Some goods</h5>
-                                    <p class="card-text">Short product description</p>
-                                    <a href="goods.php" class="btn btn-primary">More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
+                <?php ?>
+
+            </div>
+                <!--<div>
 
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
@@ -160,7 +68,7 @@
                             <a class="page-link" href="#">&raquo;</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

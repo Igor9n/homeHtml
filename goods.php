@@ -1,8 +1,10 @@
+<?php include_once 'includes/media/goods/goods.php'; ?>
+<?php header('Location: goods.php'.$_GET['id']);?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Category</title>
+    <title><?= $goods[$_GET['id']['name']] ?></title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -21,6 +23,9 @@
             </div>
         </div>
         <div class="col-sm-10">
+            <div class="row justify-content-between">
+                <h1><?= $goods[$_GET['id']['name']] ?></h1>
+            </div>
             <div class="row">
                 <div class="col-sm-3">
                     <img class="card-img-top" src="includes/media/goods.jpg" alt="Card image cap">
@@ -35,29 +40,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row"># of cores</th>
-                                    <td>18</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Generation</th>
-                                    <td>Six</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Socket type</th>
-                                    <td>Intel Socket 2066</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Integrated gpu</th>
-                                    <td>No</td>
-                                </tr><tr>
-                                    <th scope="row">Warranty</th>
-                                    <td>3 years</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Price</th>
-                                    <td>$999</td>
-                                </tr>
+                            <?php foreach ($corei3 as $key => $value): ?>
+                                    <tr>
+                                        <th scope="row"><?= $key ?></th>
+                                        <td><?= $value ?></td>
+                                    </tr>
+                            <?php endforeach;  ?>
                             </tbody>
                         </table>
                     </div>
@@ -77,14 +65,7 @@
                 <h4>Description</h4>
             </div>
             <div class="row">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-                PageMaker including versions of Lorem Ipsum.
-
+                <?= $goods[$_GET['id']['description']] ?> ?>
             </div>
         </div>
     </div>
