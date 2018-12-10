@@ -4,12 +4,12 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="list-group">
-                        <a href="../category.php" class="list-group-item list-group-item-action">Category 1</a>
-                        <a href="../category.php" class="list-group-item list-group-item-action">Category 2</a>
-                        <a href="../category.php" class="list-group-item list-group-item-action">Category 3</a>
-                        <a href="../category.php" class="list-group-item list-group-item-action">Category 4</a>
-                        <a href="../category.php" class="list-group-item list-group-item-action">Category 5</a>
-                        <a href="../category.php" class="list-group-item list-group-item-action">Category 6</a>
+                        <a href="category.php" class="list-group-item list-group-item-action">Category 1</a>
+                        <a href="category.php" class="list-group-item list-group-item-action">Category 2</a>
+                        <a href="category.php" class="list-group-item list-group-item-action">Category 3</a>
+                        <a href="category.php" class="list-group-item list-group-item-action">Category 4</a>
+                        <a href="category.php" class="list-group-item list-group-item-action">Category 5</a>
+                        <a href="category.php" class="list-group-item list-group-item-action">Category 6</a>
                     </div>
                 </div>
                 <div class="col-sm-10">
@@ -21,13 +21,13 @@
                         </ol>
                         <div class="carousel-inner my-sm-1">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="../includes/media/first.jpg" width="600" height="400" alt="First slide">
+                                <img class="d-block w-100" src="includes/media/first.jpg" width="600" height="400" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="../includes/media/second.jpg" width="600" height="400" alt="Second slide">
+                                <img class="d-block w-100" src="includes/media/second.jpg" width="600" height="400" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="../includes/media/third.jpg" width="600" height="400" alt="Third slide">
+                                <img class="d-block w-100" src="includes/media/third.jpg" width="600" height="400" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -49,35 +49,35 @@
             </div>
             <div class="row justify-content-between">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../includes/media/arrival.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">First new arrival</h5>
                         <p class="card-text">Short product description</p>
-                        <a href="../goods.php" class="btn btn-primary">More</a>
+                        <a href="goods.php" class="btn btn-primary">More</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../includes/media/arrival.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Second new arrival</h5>
                         <p class="card-text">Short product description</p>
-                        <a href="../goods.php" class="btn btn-primary">More</a>
+                        <a href="goods.php" class="btn btn-primary">More</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../includes/media/arrival.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Third new arrival</h5>
                         <p class="card-text">Short product description</p>
-                        <a href="../goods.php" class="btn btn-primary">More</a>
+                        <a href="goods.php" class="btn btn-primary">More</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../includes/media/arrival.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="includes/media/arrival.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Fourth new arrival</h5>
                         <p class="card-text">Short product description</p>
-                        <a href="../goods.php" class="btn btn-primary">More</a>
+                        <a href="goods.php" class="btn btn-primary">More</a>
                     </div>
                 </div>
             </div>

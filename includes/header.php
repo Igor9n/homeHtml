@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <img src="../includes/media/tech.png" width="30" height="30" alt="">
-    <a class="navbar-brand" href="../index.php">TechStore</a>
+    <img src="includes/media/tech.png" width="30" height="30" alt="">
+    <a class="navbar-brand" href="index.php">TechStore</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Main</a>
+                <a class="nav-link" href="index.php">Main</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Vacancies</a>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <a class="nav-link" href="../cart.php">Cart</a>
+            <a class="nav-link" href="cart.php">Cart</a>
         </div>
     </div>
 </nav>
