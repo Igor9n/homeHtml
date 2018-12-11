@@ -1,80 +1,83 @@
-<?php include_once 'includes/media/goods/goods.php'; ?>
+<?php
+include_once 'includes/content/goods.php';
+$count_cats = 0;
+foreach ($goods as $value)
+{
+    if ($value['catid']===$_GET['id']) $count_cats++;
+}
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Goods</title>
+    <link rel="shortcut icon" href="includes/media/tech.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <?php include 'includes/header.php' ?>
+    <?php include 'includes/pages/header.php' ?>
+    <div class="dropdown-divider">
+        ------------------------------------------------------------------------------------------------------
+        ------------------------------------------------------------------------------------------------------
+        ---------------------------
+    </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2">
-                <div class="list-group">
-                    <a href="category.php" class="list-group-item list-group-item-action">Category 1</a>
-                    <a href="category.php" class="list-group-item list-group-item-action">Category 2</a>
-                    <a href="category.php" class="list-group-item list-group-item-action">Category 3</a>
-                    <a href="category.php" class="list-group-item list-group-item-action">Category 4</a>
-                    <a href="category.php" class="list-group-item list-group-item-action">Category 5</a>
-                    <a href="category.php" class="list-group-item list-group-item-action">Category 6</a>
-                </div>
-            </div>
+            <?php include 'includes/pages/categories.php'; ?>
             <div class="col-sm-10">
-                <?php  ?>
+                <?php if ($_GET['id']==='all'): ?>
+                    <div class="alert alert-secondary">
+                        <h4 class="alert-heading">All items we have.</h4>
+                        <p class="mb-0">Here's everything you need!</p>
+                    </div>
                     <div class="row">
-                        <div class="col-sm-12">
-                            <div class="row justify-content-between">
-                                <?php foreach ($goods as $value): ?>
-                                    <div class="card" style="width: 15rem;" style="height: 15rem;">
-                                        <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><b><?= $value['name'];?></b></h5>
-                                            <p class="card-text">Short product description</p>
-                                            <a href="goods.php?id=<?= $value['id']?>" class="btn btn-primary">More</a>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
+                    <?php foreach (array_reverse($goods) as $value): ?>
+                        <div class="card col-sm-3" style="width: 15rem;" style="height: 15rem;">
+                            <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
+                            <div class="card-footer">
+                                 <h5 class="card-title"><b><?= $value['name'];?></b></h5>
+                                 <p class="card-text"><?= $value['shortDesc'];?></p>
+                                 <a style="position: relative; bottom: 0;" href="item.php?id=<?= $value['id']; ?>" class="btn btn-primary">More</a>
                             </div>
                         </div>
+                    <?php endforeach; ?>
                     </div>
-                <?php ?>
-
-            </div>
-                <!--<div>
-
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" href="#">&laquo;</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">5</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">&raquo;</a>
-                        </li>
-                    </ul>
-                </div> -->
+                <?else: ?>
+                    <?php if ($count_cats): ?>
+                        <div class="alert alert-secondary">
+                            <h4 class="alert-heading">Our <?= mb_strtolower($categories[$_GET['id']]['name']) ?></h4>
+                            <p class="mb-0">Here's everything you need!</p>
+                        </div>
+                        <div class="row">
+                            <?php foreach ($goods as $value): ?>
+                                <?php if($value['catid'] === $_GET['id']): ?>
+                                <div class="card col-sm-3" style="width: 15rem;" style="height: 15rem;">
+                                    <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
+                                    <div class="card-footer">
+                                        <h5 class="card-title"><b><?= $value['name'];?></b></h5>
+                                        <p class="card-text"><?= $value['shortDesc'];?></p>
+                                        <a href="item.php?id=<?= $value['id']; ?>" class="btn btn-primary">More</a>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="alert alert-warning">
+                                <h4 class="alert-heading">So sorry, all <?= mb_strtolower($categories[$_GET['id']]['name']) ?> has been already sold!</h4>
+                                <p class="mb-0">Visit us later.</p>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
+        <?php include 'includes/pages/arrivals.php'; ?>
     </div>
 
-
-    <?php include 'includes/footer.php' ?>
+    <?php include 'includes/pages/footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
