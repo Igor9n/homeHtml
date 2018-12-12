@@ -11,8 +11,4 @@ class Categories
     {
         return Cats::$categories[$id]['name'];
     }
-    public static function categoryView()
-    {
-        include 'view/CategoryView.php';
-    }
 }

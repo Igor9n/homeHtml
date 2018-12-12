@@ -1,7 +1,8 @@
 <?php
-include_once 'includes/content/goods.php';
-include_once 'controllers/ItemController.php';
-include_once 'controllers/CategoryController.php';
+include_once '../includes/content/goods.php';
+include_once '../controllers/ItemController.php';
+include_once '../controllers/CategoryController.php';
+
 $count_cats = 0;
 
 foreach (Products::getAll() as $value)
@@ -11,7 +12,8 @@ foreach (Products::getAll() as $value)
         $count_cats++;
     }
 }
-echo $_SERVER['REQUEST_URI'];
+echo '11';
+
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +21,13 @@ echo $_SERVER['REQUEST_URI'];
 <head>
     <meta charset="UTF-8">
     <title>Goods</title>
-    <link rel="shortcut icon" href="includes/media/tech.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="../includes/media/tech.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<?php include 'includes/pages/header.php' ?>
+<?php include '../includes/pages/header.php' ?>
 <div class="dropdown-divider">
     ------------------------------------------------------------------------------------------------------
     ------------------------------------------------------------------------------------------------------
@@ -33,7 +35,7 @@ echo $_SERVER['REQUEST_URI'];
 </div>
 <div class="container-fluid">
     <div class="row">
-        <?php include 'includes/pages/categories.php'; ?>
+        <?php include '../includes/pages/categories.php'; ?>
         <div class="col-sm-10">
             <?php if ($_GET['id']==='all'): ?>
                 <div class="alert alert-secondary">
@@ -47,7 +49,7 @@ echo $_SERVER['REQUEST_URI'];
                             <div class="card-footer">
                                 <h5 class="card-title"><b><?= $value['name'];?></b></h5>
                                 <p class="card-text"><?= $value['shortDesc'];?></p>
-                                <a style="position: relative; bottom: 0;" href="item.php?id=<?= $value['id']; ?>" class="btn btn-primary">More</a>
+                                <a style="position: relative; bottom: 0;" href="../item.php?id=<?= $value['id']; ?>" class="btn btn-primary">More</a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -66,7 +68,7 @@ echo $_SERVER['REQUEST_URI'];
                                     <div class="card-footer">
                                         <h5 class="card-title"><b><?= $value['name'];?></b></h5>
                                         <p class="card-text"><?= $value['shortDesc'];?></p>
-                                        <a href="item.php?id=<?= $value['id']; ?>" class="btn btn-primary">More</a>
+                                        <a href="../item.php?id=<?= $value['id']; ?>" class="btn btn-primary">More</a>
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -81,10 +83,10 @@ echo $_SERVER['REQUEST_URI'];
             <?php endif; ?>
         </div>
     </div>
-    <?php include 'includes/pages/arrivals.php'; ?>
+    <?php include '../includes/pages/arrivals.php'; ?>
 </div>
 
-<?php include 'includes/pages/footer.php' ?>
+<?php include '../includes/pages/footer.php' ?>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
