@@ -3,7 +3,10 @@ include_once 'includes/content/goods.php';
 $count_cats = 0;
 foreach ($goods as $value)
 {
-    if ($value['catid']===$_GET['id']) $count_cats++;
+    if ($value['catid']===$_GET['id'])
+    {
+        $count_cats++;
+    }
 }
 ?>
 
@@ -45,10 +48,10 @@ foreach ($goods as $value)
                         </div>
                     <?php endforeach; ?>
                     </div>
-                <?else: ?>
+                <?php else: ?>
                     <?php if ($count_cats): ?>
                         <div class="alert alert-secondary">
-                            <h4 class="alert-heading">Our <?= mb_strtolower($categories[$_GET['id']]['name']) ?></h4>
+                            <h4 class="alert-heading">Our <?= strtolower($categories['videocard']['name']); ?></h4>
                             <p class="mb-0">Here's everything you need!</p>
                         </div>
                         <div class="row">
@@ -67,7 +70,7 @@ foreach ($goods as $value)
                         </div>
                     <?php else: ?>
                         <div class="alert alert-warning">
-                                <h4 class="alert-heading">So sorry, all <?= mb_strtolower($categories[$_GET['id']]['name']) ?> has been already sold!</h4>
+                                <h4 class="alert-heading">So sorry, all <?= strtolower($categories[$_GET['id']]['name']) ?> has been already sold!</h4>
                                 <p class="mb-0">Visit us later.</p>
                         </div>
                     <?php endif; ?>

@@ -1,4 +1,4 @@
-<?php include 'includes/content/cats.php';?>
+<?php require 'includes/content/cats.php';?>
 <div class="col-sm-2">
     <div class="list-group row justify-content-start">
             <a href="category.php?id=all" class="list-group-item list-group-item-action"><b>All items</b></a>
