@@ -14,7 +14,7 @@
         <hr class="my-4">
         <p>We offer the best prices for the best quality.</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="../category.php?id=all" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg" href="category.php?id=all" role="button">Learn more</a>
         </p>
     </div>
     <div class="row justify-content-between">
@@ -26,7 +26,7 @@
                     <div class="card-footer">
                         <h5 class="card-title"><b><?= $value['name'];?></b></h5>
                         <p class="card-text"><?= $value['shortDesc'];?></p>
-                        <a href="../item.php?id=<?= $value['id'];?>" class="btn btn-primary">More</a>
+                        <a href="item.php?id=<?= $value['id'];?>" class="btn btn-primary">More</a>
                     </div>
                 </div>
             </div>
