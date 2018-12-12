@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Главная страница</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="includes/media/tech.png" type="image/x-icon">
-</head>
-  <body>
-  <?php include 'includes/pages/header.php' ?>
-  <div class="dropdown-divider">
-      ------------------------------------------------------------------------------------------------------
-      ------------------------------------------------------------------------------------------------------
-      ---------------------------
-  </div>
-  <?php include 'includes/pages/main.php' ?>
-  <?php include 'includes/pages/arrivals.php'; ?>
-  <?php include 'includes/pages/footer.php' ?>
+<?php
+require 'controllers/CategoryController.php';
+require 'controllers/ItemController.php';
+if (!($_GET))
+{
+    include 'includes/pages/main.php';
+} else
+{
+    foreach ($_GET as $key => $value)
+    {
+        switch ($key)
+        {
+            case 'category':
+                Categories::getCatView();
+                break;
+            case 'item':
+                Products::getItemView();
+                break;
+        }
+    }
+}
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+?>

@@ -1,4 +1,4 @@
-<?php include 'includes/content/goods.php'; ?>
+<?php include_once 'controllers/ItemController.php'; ?>
 <?php $count_arrivals = 0; ?>
 <div class="col-sm-12";>
     <div class="row justify-content-between">
@@ -18,7 +18,7 @@
         </p>
     </div>
     <div class="row justify-content-between">
-        <?php foreach (array_reverse($goods) as $value): ?>
+        <?php foreach (array_reverse(Products::getAll()) as $value): ?>
             <?php if ($count_arrivals==5) break; ?>
                 <div class="card" style="width: 14rem;">
                     <div class="card-body">
@@ -26,7 +26,9 @@
                         <div class="card-footer">
                             <h5 class="card-title"><b><?= $value['name'];?></b></h5>
                             <p class="card-text"><?= $value['shortDesc'];?></p>
-                            <a href="item.php?id=<?= $value['id'];?>" class="btn btn-primary">More</a>
+                            <form>
+                                <button type="submit" name="item" value="<?=$value['id']?>" class="btn btn-primary">More</button>
+                            </form>
                         </div>
                     </div>
                 </div>

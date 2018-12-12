@@ -27,4 +27,8 @@ class Products
     {
         return Goods::$products[$id]['shortDesc'];
     }
+    public static function getItemView()
+    {
+        include 'views/ItemView.php';
+    }
 }
