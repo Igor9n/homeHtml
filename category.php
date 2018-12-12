@@ -1,7 +1,10 @@
 <?php
 include_once 'includes/content/goods.php';
+include_once 'controllers/ItemController.php';
+include_once 'controllers/CategoryController.php';
 $count_cats = 0;
-foreach ($goods as $value)
+
+foreach (Products::getAll() as $value)
 {
     if ($value['catid']===$_GET['id'])
     {
@@ -37,7 +40,7 @@ foreach ($goods as $value)
                         <p class="mb-0">Here's everything you need!</p>
                     </div>
                     <div class="row">
-                    <?php foreach (array_reverse($goods) as $value): ?>
+                    <?php foreach (array_reverse(Products::getAll()) as $value): ?>
                         <div class="card col-sm-3" style="width: 15rem;" style="height: 15rem;">
                             <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
                             <div class="card-footer">
@@ -51,11 +54,11 @@ foreach ($goods as $value)
                 <?php else: ?>
                     <?php if ($count_cats): ?>
                         <div class="alert alert-secondary">
-                            <h4 class="alert-heading">Our <?= strtolower($categories['videocard']['name']); ?></h4>
+                            <h4 class="alert-heading">Our <?= strtolower(Categories::getCatName($_GET['id'])); ?></h4>
                             <p class="mb-0">Here's everything you need!</p>
                         </div>
                         <div class="row">
-                            <?php foreach ($goods as $value): ?>
+                            <?php foreach (Products::getAll() as $value): ?>
                                 <?php if($value['catid'] === $_GET['id']): ?>
                                 <div class="card col-sm-3" style="width: 15rem;" style="height: 15rem;">
                                     <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
@@ -70,7 +73,7 @@ foreach ($goods as $value)
                         </div>
                     <?php else: ?>
                         <div class="alert alert-warning">
-                                <h4 class="alert-heading">So sorry, all <?= strtolower($categories[$_GET['id']]['name']) ?> has been already sold!</h4>
+                                <h4 class="alert-heading">So sorry, all <?= strtolower(Cats::$categories[$_GET['id']]['name']) ?> has been already sold!</h4>
                                 <p class="mb-0">Visit us later.</p>
                         </div>
                     <?php endif; ?>

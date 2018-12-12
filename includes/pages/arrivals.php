@@ -20,16 +20,16 @@
     <div class="row justify-content-between">
         <?php foreach (array_reverse($goods) as $value): ?>
             <?php if ($count_arrivals==5) break; ?>
-            <div class="card" style="width: 14rem;">
-                <div class="card-body">
-                    <img class="card-img-top" src="includes/media/goods/<?= $value['id'];?>.jpg" alt="Card image cap">
-                    <div class="card-footer">
-                        <h5 class="card-title"><b><?= $value['name'];?></b></h5>
-                        <p class="card-text"><?= $value['shortDesc'];?></p>
-                        <a href="item.php?id=<?= $value['id'];?>" class="btn btn-primary">More</a>
+                <div class="card" style="width: 14rem;">
+                    <div class="card-body">
+                        <img class="card-img-top" src="includes/media/goods/<?= $value['id'];?>.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <h5 class="card-title"><b><?= $value['name'];?></b></h5>
+                            <p class="card-text"><?= $value['shortDesc'];?></p>
+                            <a href="item.php?id=<?= $value['id'];?>" class="btn btn-primary">More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php $count_arrivals++?>
         <?php endforeach; ?>
     </div>
