@@ -1,0 +1,7 @@
+﻿Inches => 27",
+            Refresh rate =>  144Hz,
+            Response time => 1ms,
+            View angle => 178°,
+            Warranty => 3 years,
+            Price => 15290,
+            Currency => UAH

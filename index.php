@@ -1,6 +1,7 @@
 <?php
 require 'controllers/CategoryController.php';
 require 'controllers/ItemController.php';
+
 if (!($_GET))
 {
     include 'includes/pages/main.php';

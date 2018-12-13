@@ -1,11 +1,10 @@
 <?php
-include_once 'includes/content/goods.php';
 include_once 'controllers/ItemController.php';
 include_once 'controllers/CategoryController.php';
 
 $count_cats = 0;
 
-foreach (Products::getAll() as $value)
+foreach (Products::getAllItems() as $value)
 {
     if ($value['catid']===$_GET['category'])
     {
@@ -42,7 +41,7 @@ foreach (Products::getAll() as $value)
                     <p class="mb-0">Here's everything you need!</p>
                 </div>
                 <div class="row">
-                    <?php foreach (array_reverse(Products::getAll()) as $value): ?>
+                    <?php foreach (array_reverse(Products::getAllItems()) as $value): ?>
                         <div class="card col-sm-3" style="width: 15rem;" style="height: 15rem;">
                             <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
                             <div class="card-footer">
@@ -58,11 +57,11 @@ foreach (Products::getAll() as $value)
             <?php else: ?>
                 <?php if ($count_cats): ?>
                     <div class="alert alert-secondary">
-                        <h4 class="alert-heading">Our <?= strtolower(Categories::getCatName($_GET['category'])); ?></h4>
+                        <h4 class="alert-heading">Our <?= strtolower(Cats::getCatName($_GET['category'])); ?></h4>
                         <p class="mb-0">Here's everything you need!</p>
                     </div>
                     <div class="row">
-                        <?php foreach (Products::getAll() as $value): ?>
+                        <?php foreach (Products::getAllItems() as $value): ?>
                             <?php if($value['catid'] === $_GET['category']): ?>
                                 <div class="card col-sm-3" style="width: 15rem;" style="height: 15rem;">
                                     <img width="140" height="250" class="card-img-top" src="includes/media/goods/<?= $value['id'] ?>.jpg" alt="Card image cap">
@@ -79,7 +78,7 @@ foreach (Products::getAll() as $value)
                     </div>
                 <?php else: ?>
                     <div class="alert alert-warning">
-                        <h4 class="alert-heading">So sorry, all <?= strtolower(Cats::$categories[$_GET['category']]['name']) ?> has been already sold!</h4>
+                        <h4 class="alert-heading">So sorry, all <?= strtolower(Categories::getAllCats()[$_GET['category']]['name']) ?> has been already sold!</h4>
                         <p class="mb-0">Visit us later.</p>
                     </div>
                 <?php endif; ?>

@@ -5,11 +5,19 @@ class Categories
 {
     public static function getAllCats()
     {
-        return Cats::$categories;
+        $cats = array();
+        foreach (Cats::getCatList() as $cat)
+        {
+            $cats[] = Categories::getCatInfo($cat);
+        }
+        return $cats;
     }
-    public static function getCatName($id)
+    public static function getCatInfo($id)
     {
-        return Cats::$categories[$id]['name'];
+        return [
+            'id' => Cats::getCatId($id),
+            'name' => Cats::getCatName($id)
+        ];
     }
     public static function getCatView()
     {

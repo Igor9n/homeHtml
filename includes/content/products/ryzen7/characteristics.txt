@@ -1,0 +1,7 @@
+# of cores => 8,
+            Generation =>  First,
+            Socket type => AM4,
+            Integrated GPU => No,
+            Warranty => 5 years,
+            Price => 7517,
+            Currency => UAH

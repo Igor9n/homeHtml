@@ -14,11 +14,13 @@
         <hr class="my-4">
         <p>We offer the best prices for the best quality.</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="category.php?id=all" role="button">Learn more</a>
+            <form>
+                <button type="submit" name="category" value="all" class="btn btn-primary btn-lg">Learn more</button>
+            </form>
         </p>
     </div>
     <div class="row justify-content-between">
-        <?php foreach (array_reverse(Products::getAll()) as $value): ?>
+        <?php foreach (array_reverse(Products::getAllItems()) as $value): ?>
             <?php if ($count_arrivals==5) break; ?>
                 <div class="card" style="width: 14rem;">
                     <div class="card-body">

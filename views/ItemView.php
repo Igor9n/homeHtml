@@ -1,11 +1,10 @@
-<?php include_once 'includes/content/goods.php'; ?>
 <?php include_once 'controllers/ItemController.php'; ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title><?= Products::getNameById($_GET['item']) ?></title>
+    <title><?= Products::getItemInfo($_GET['item'])['name'] ?></title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="shortcut icon" href="../includes/media/tech.png" type="image/x-icon">
@@ -24,7 +23,7 @@
             <?php include 'includes/pages/categories.php'; ?>
             <div class="col-sm-10">
                 <div class="alert alert-secondary">
-                    <h4 class="alert-heading"><h1><?= Products::getNameById($_GET['item']) ?></h1></h4>
+                    <h4 class="alert-heading"><h1><?= Products::getItemInfo($_GET['item'])['name'] ?></h1></h4>
                 </div>
                 <div class="row">
                     <div class="col-sm-3">
@@ -40,10 +39,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach (Products::getDataById($_GET['item']) as $key => $value): ?>
+                                <?php foreach (Products::getItemInfo($_GET['item'])['characteristics'] as $value): ?>
                                     <tr>
-                                        <th scope="row"><?= $key ?></th>
-                                        <td><?= $value ?></td>
+                                        <th scope="row"><?= $value[0] ?></th>
+                                        <td><?= $value[1] ?></td>
                                     </tr>
                                 <?php endforeach;  ?>
                                 </tbody>
@@ -65,7 +64,7 @@
                     <h4>Description</h4>
                 </div>
                 <div class="row">
-                    <?= Products::getDescriptionById($_GET['item']) ?>
+                    <?= Products::getItemInfo($_GET['item'])['description'] ?>
                 </div>
             </div>
         </div>

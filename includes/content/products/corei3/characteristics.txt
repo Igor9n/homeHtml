@@ -1,0 +1,7 @@
+# of cores => 4,
+            Generation =>  Eight,
+            Socket type => s1151,
+            Integrated GPU => Intel UHD630,
+            Warranty => 3 years,
+            Price => 3999,
+            Currency => UAH

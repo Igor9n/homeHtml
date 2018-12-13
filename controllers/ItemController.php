@@ -3,29 +3,25 @@ include_once 'models/ItemModel.php';
 
 class Products
 {
-    public static function getAll()
+    public static function getAllItems()
     {
-        return Goods::$products;
+        $items = array();
+        foreach (Goods::getItemsList() as $item)
+        {
+            $items[] = Products::getItemInfo($item);
+        }
+        return $items;
     }
-    public static function getInfoById($id)
+    public static function getItemInfo($id)
     {
-        return Goods::$products[$id];
-    }
-    public static function getDataById($id)
-    {
-        return Goods::$products[$id]['characteristics'];
-    }
-    public static function getNameById($id)
-    {
-        return Goods::$products[$id]['name'];
-    }
-    public static function getDescriptionById($id)
-    {
-        return Goods::$products[$id]['description'];
-    }
-    public static function getShortDescriptionById($id)
-    {
-        return Goods::$products[$id]['shortDesc'];
+        return [
+            'id' => Goods::getItemId($id),
+            'catid' => Goods::getCatId($id),
+            'name' => Goods::getName($id),
+            'characteristics' => Goods::getCharacteristics($id),
+            'shortDesc' => Goods::getShortDescription($id),
+            'description' => Goods::getDescription($id)
+        ];
     }
     public static function getItemView()
     {

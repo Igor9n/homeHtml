@@ -1,0 +1,7 @@
+Inches => 27",
+            Memory type =>  GDDR5,
+            Cooling system => Dual fan,
+            Maximum resolution => 7680x4320,
+            Warranty => 2 years,
+            Price => 6207,
+            Currency => UAH

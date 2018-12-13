@@ -1,0 +1,7 @@
+# of cores => 18,
+            Generation =>  Six,
+            Socket type => s1151,
+            Integrated GPU => Intel UHD 630,
+            Warranty => 3 years,
+            Price => 19316,
+            Currency => UAH
