@@ -7,7 +7,7 @@
     <title><?= Products::getItemInfo($_GET['item'])['name'] ?></title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="gitincludes/media/tech.png" type="image/x-icon">
+    <link rel="shortcut icon" href="includes/media/tech.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -17,60 +17,58 @@
     ------------------------------------------------------------------------------------------------------
     ---------------------------
 </div>
-<?php if( isset($_GET['item']) ):?>
-    <div class="container-fluid">
-        <div class="row">
-            <?php include 'includes/pages/categories.php'; ?>
-            <div class="col-sm-10">
-                <div class="alert alert-secondary">
-                    <h4 class="alert-heading"><h1><?= Products::getItemInfo($_GET['item'])['name'] ?></h1></h4>
+<div class="container-fluid">
+    <div class="row">
+        <?php include 'includes/pages/categories.php'; ?>
+        <div class="col-sm-10">
+            <div class="alert alert-secondary">
+                <h4 class="alert-heading"><h1><?= Products::getItemInfo($_GET['item'])['name'] ?></h1></h4>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <img class="card-img-top" src="includes/media/goods/<?= $_GET['item'] ?>.jpg" alt="Card image cap">
                 </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img class="card-img-top" src="includes/media/goods/<?= $_GET['item'] ?>.jpg" alt="Card image cap">
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="row justify-content-between">
-                            <table class="table table-hover">
-                                <thead>
+                <div class="col-sm-9">
+                    <div class="row justify-content-between">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Characteristic</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach (Products::getItemInfo($_GET['item'])['characteristics'] as $value): ?>
                                 <tr>
-                                    <th scope="col">Characteristic</th>
-                                    <th scope="col">Value</th>
+                                    <th scope="row"><?= $value[0] ?></th>
+                                    <td><?= $value[1] ?></td>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach (Products::getItemInfo($_GET['item'])['characteristics'] as $value): ?>
-                                    <tr>
-                                        <th scope="row"><?= $value[0] ?></th>
-                                        <td><?= $value[1] ?></td>
-                                    </tr>
-                                <?php endforeach;  ?>
-                                </tbody>
-                            </table>
-                        </div>
+                            <?php endforeach;  ?>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <div class="row justify-content-center">
-                    <button type="button" name="addtocart" class="btn btn-primary">Add to cart</button>
-                </div>
-                <div class="row justify-content-between">
-                    <div class="dropdown-divider">
-                        ------------------------------------------------------------------------------------------------------
-                        ------------------------------------------------------------------------------------------------------
-                        -------------------------
-                    </div>
-                </div>
-                <div class="row">
-                    <h4>Description</h4>
-                </div>
-                <div class="row">
-                    <?= Products::getItemInfo($_GET['item'])['description'] ?>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <button type="button" name="addtocart" class="btn btn-primary">Add to cart</button>
+            </div>
+            <div class="row justify-content-between">
+                <div class="dropdown-divider">
+                    ------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------------------------------------------------
+                    -------------------------
+                </div>
+            </div>
+            <div class="row">
+                <h4>Description</h4>
+            </div>
+            <div class="row">
+                <?= Products::getItemInfo($_GET['item'])['description'] ?>
+            </div>
         </div>
-        <?php include 'includes/pages/arrivals.php'; ?>
     </div>
-<?php endif; ?>
+    <?php include 'includes/pages/arrivals.php'; ?>
+</div>
 
 
 <?php include 'includes/pages/footer.php' ?>

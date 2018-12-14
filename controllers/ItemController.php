@@ -8,7 +8,7 @@ class Products
         $items = array();
         foreach (Goods::getItemsList() as $item)
         {
-            $items[] = Products::getItemInfo($item);
+            $items[] = self::getItemInfo($item);
         }
         return $items;
     }
