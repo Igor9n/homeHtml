@@ -19,9 +19,9 @@ foreach (Products::getAllItems() as $value)
 <head>
     <meta charset="UTF-8">
     <title>Goods</title>
-    <link rel="shortcut icon" href="../includes/media/tech.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="includes/media/tech.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

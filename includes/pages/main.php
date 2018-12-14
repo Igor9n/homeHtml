@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../media/tech.png" type="image/x-icon">
+    <link rel="shortcut icon" href="includes/media/tech.png" type="image/x-icon">
 </head>
 <body>
     <?php include 'header.php' ?>
